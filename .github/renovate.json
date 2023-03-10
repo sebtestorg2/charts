@@ -5,6 +5,7 @@
   "prHourlyLimit": 2,
   "automergeStrategy": "merge-commit",
   "ignoreTests": true,
+  "ignorePaths": ["**/assets/**", "**/charts/**", "**/docs/**"]
   "regexManagers": [
     {
       "fileMatch": ["(^|/|\\.)Dockerfile$", "(^|/)Dockerfile[^/]*$"],                                                                                                                                                                                                                                                         
