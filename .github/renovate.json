@@ -1,0 +1,57 @@
+{
+  "baseBranches": ["dev/v2.7"],
+  "rebaseWhen": "conflicted",
+  "labels": ["dependencies"],
+  "prHourlyLimit": 2,
+  "automergeStrategy": "merge-commit",
+  "ignoreTests": true,
+  "regexManagers": [
+    {
+      "fileMatch": ["(^|/|\\.)Dockerfile$", "(^|/)Dockerfile[^/]*$"],                                                                                                                                                                                                                                                         
+      "matchStrings": ["ENV KUSTOMIZE_VERSION(\\=|\\s)(?<currentValue>.*?)\\n"],                                                                                                                                                                                                                                                   
+      "depNameTemplate": "kubernetes-sigs/kustomize",                                                                                                                                                                                                                                                                         
+      "datasourceTemplate": "github-releases"                                                                                                                                                                                                                                                                                 
+    },
+    {                                                                                                                                                                                                                                                                                                                         
+      "fileMatch": ["(^|/|\\.)Dockerfile$", "(^|/)Dockerfile[^/]*$"],                                                                                                                                                                                                                                                         
+      "matchStrings": ["ENV K9S_VERSION(\\=|\\s)(?<currentValue>.*?)\\n"],                                                                                                                                                                                                                                                   
+      "depNameTemplate": "derailed/k9s",                                                                                                                                                                                                                                                                         
+      "datasourceTemplate": "github-releases"                                                                                                                                                                                                                                                                                 
+    },
+    {
+      "fileMatch": [
+        "values.yaml$"
+      ],
+      "matchStrings": [
+        "global:[\\s\\S]*?kubectl:[\\s\\S]*?repository:\\s(?<depName>.*?)\\n[\\s\\S]*?tag:\\s(?<currentValue>.*?)\\n"
+      ],
+      "datasourceTemplate": "docker"
+    }
+  ],
+  "packageRules": [
+    {
+      "matchPackagePatterns": ["k8s.io/api","k8s.io/apiextensions-apiserver","k8s.io/apimachinery","k8s.io/apiserver","k8s.io/client-go"],
+      "groupName": "k8s-dependencies",
+      "allowedVersions": "<0.25.0"
+    },
+    {
+      "matchPackagePatterns": ["golang.org/"],
+      "groupName": "golang-internal-dependencies"
+    },
+    {
+      "matchPackagePatterns": ["registry.suse.com/bci/bci-"],
+      "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
+      "stabilityDays": 3,
+      "automerge": true
+    },
+    {
+      "matchPackagePatterns": ["kustomize"],
+      "extractVersion": "^kustomize\/(?<version>.*)$",
+      "groupName": "kustomize"
+    },
+    {
+      "matchPackageNames": ["kubernetes/kubernetes", "rancher/kubectl"],
+      "allowedVersions": "<1.26.0"
+    }
+  ]
+}
