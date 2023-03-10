@@ -1,5 +1,5 @@
 {
-  "baseBranches": ["dev/v2.7"],
+  "baseBranches": ["dev-v2.7"],
   "rebaseWhen": "conflicted",
   "labels": ["dependencies"],
   "prHourlyLimit": 2,
