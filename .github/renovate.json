@@ -2,10 +2,10 @@
   "baseBranches": ["dev-v2.7"],
   "rebaseWhen": "conflicted",
   "labels": ["dependencies"],
-  "prHourlyLimit": 10,
+  "prHourlyLimit": 20,
   "automergeStrategy": "merge-commit",
   "ignoreTests": true,
-  "ignorePaths": ["**/assets/**", "**/charts/**", "**/docs/**"],
+  "ignorePaths": ["**/assets/**", "./charts/**", "**/docs/**"],
   "regexManagers": [
     {
       "fileMatch": ["(^|/|\\.)Dockerfile$", "(^|/)Dockerfile[^/]*$"],                                                                                                                                                                                                                                                         
