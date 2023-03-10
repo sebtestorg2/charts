@@ -20,7 +20,7 @@ postInstall:
     enabled: true
     image:
       repository: rancher/kubectl
-      tag: v1.20.2
+      tag: v1.25.7
       pullPolicy: IfNotPresent
       pullSecrets: []
 images:
@@ -88,6 +88,6 @@ global:
     systemDefaultRegistry: ""
   kubectl:
     repository: rancher/kubectl
-    tag: v1.20.2
+    tag: v1.25.7
 service: {}
 disabledBuiltins:

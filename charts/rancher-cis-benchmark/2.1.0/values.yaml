@@ -41,7 +41,7 @@ global:
     clusterName: ""
   kubectl:
     repository: rancher/kubectl
-    tag: v1.20.2
+    tag: v1.25.7
 
 alerts:
   enabled: false

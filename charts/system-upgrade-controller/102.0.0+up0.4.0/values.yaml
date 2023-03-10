@@ -12,4 +12,4 @@ systemUpgradeController:
 kubectl:
   image:
     repository: rancher/kubectl
-    tag: v1.23.3
+    tag: v1.25.7

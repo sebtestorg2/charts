@@ -314,7 +314,7 @@ global:
     systemDefaultRegistry: ""
   kubectl:
      repository: rancher/kubectl
-     tag: v1.18.6
+     tag: v1.25.7
      pullPolicy: IfNotPresent
   rbac:
     ## Create RBAC resources for ServiceAccounts and users 

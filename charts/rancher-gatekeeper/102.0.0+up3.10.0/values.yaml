@@ -38,7 +38,7 @@ postUpgrade:
     enabled: false
     image:
       repository: rancher/kubectl
-      tag: v1.20.2
+      tag: v1.25.7
       pullPolicy: IfNotPresent
       pullSecrets: []
     extraNamespaces: []
@@ -242,7 +242,7 @@ global:
       enabled: false
   kubectl:
     repository: rancher/kubectl
-    tag: v1.20.2
+    tag: v1.25.7
 service: {}
 disabledBuiltins: ["{http.send}"]
 upgradeCRDs:
