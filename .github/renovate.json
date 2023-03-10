@@ -2,7 +2,7 @@
   "baseBranches": ["dev-v2.7"],
   "rebaseWhen": "conflicted",
   "labels": ["dependencies"],
-  "prHourlyLimit": 2,
+  "prHourlyLimit": 10,
   "automergeStrategy": "merge-commit",
   "ignoreTests": true,
   "ignorePaths": ["**/assets/**", "**/charts/**", "**/docs/**"],
