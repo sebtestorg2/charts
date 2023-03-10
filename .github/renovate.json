@@ -53,6 +53,11 @@
     {
       "matchPackageNames": ["kubernetes/kubernetes", "rancher/kubectl"],
       "allowedVersions": "<1.26.0"
+    },
+    {
+      "managers": ["helm-values", "regex"],
+      "additionalBranchPrefix": "{{baseDir}}-",
+      "packagePatterns": [".*"]
     }
   ]
 }
