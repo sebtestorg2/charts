@@ -10,7 +10,7 @@ global:
     systemDefaultRegistry: ""
   kubectl:
     repository: rancher/kubectl
-    tag: v1.20.2
+    tag: v1.25.7
   # set this value if you want the sub-charts to be installed into
   # a namespace rather than where this chart is installed
   namespaceOverride: ""
